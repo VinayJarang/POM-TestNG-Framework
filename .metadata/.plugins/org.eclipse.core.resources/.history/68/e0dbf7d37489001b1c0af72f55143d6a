@@ -1,0 +1,9 @@
+package Assignments;
+
+import org.openqa.selenium.WebDriver;
+
+import DriverInitialise.InitChrome;
+
+public class ChromeExtensions {
+	WebDriver aDriver = new InitChrome().init();
+}

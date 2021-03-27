@@ -1,0 +1,23 @@
+package WebDriverMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import DriverInitialise.InitChrome;
+
+public class WebDriverConditionalCmds {
+
+	public static void main(String[] args) {
+		WebDriver aDriver = new InitChrome().init();
+
+		aDriver.get("http://www.testdiary.com/training/selenium/selenium-test-page/");
+		
+		WebElement seleniumbox = aDriver.findElement(By.id("seleniumbox"));
+		if(seleniumbox.isDisplayed() && seleniumbox.isEnabled()){
+			seleniumbox.click();
+		}
+		System.out.println("isSelected :"+seleniumbox.isSelected());
+	}
+
+}

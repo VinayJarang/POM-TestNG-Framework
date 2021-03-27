@@ -1,0 +1,28 @@
+package com.spicejet.qa.pages;
+
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.spicejet.qa.base.TestBase;
+
+public class DealsPage extends TestBase{
+	
+	@FindBy(id="proceed-button")
+	WebElement proceedBtm;
+	
+	public DealsPage() {
+		PageFactory.initElements(driver, this);
+	}
+	
+	/*
+	 * ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+	 * //driver.switchTo().window(tabs2.get(1));
+	 * 
+	 * driver.findElement(By.id("proceed-button")).click();
+	 * driver.navigate().refresh();
+	 */
+}

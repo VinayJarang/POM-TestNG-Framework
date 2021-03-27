@@ -1,0 +1,16 @@
+package com.spicejet.qa.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.spicejet.qa.base.TestBase;
+
+public class SMProfilePage extends TestBase{
+	
+	@FindBy(xpath="//p[@class='left-welcome']")
+	WebElement userName;
+	
+	@FindBy(xpath="//a[contains(text(),'My Profile') and @class='member-my-profile mm-kyc-warning arrow-on']")
+	WebElement myProfile;
+	
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Spicejet Suite" parallel="tests" thread-count="2">
+
+  <listeners>
+  	<listener class-name="com.spicejet.ExtentReportListner.ExtentReporterNG"/>
+  </listeners>	
+
+  <test name="Spicejet login deals and book">
+  <parameter name="browserName" value="chrome"></parameter>
+    <classes>
+      <class name="com.spicejet.qa.testcases.BookingPageTest"></class>
+      <class name="com.spicejet.qa.testcases.DealsPageTest"></class>
+      <class name="com.spicejet.qa.testcases.LoginPageTest"></class>
+      <class name="com.spicejet.qa.testcases.SMProfilePageTest"></class>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="Spicejet login deals and book">
+  <parameter name="browserName" value="chrome"></parameter>
+    <classes>
+      <class name="com.spicejet.qa.testcases.BookingPageTest"></class>
+      <class name="com.spicejet.qa.testcases.DealsPageTest"></class>
+      <class name="com.spicejet.qa.testcases.LoginPageTest"></class>
+      <class name="com.spicejet.qa.testcases.SMProfilePageTest"></class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

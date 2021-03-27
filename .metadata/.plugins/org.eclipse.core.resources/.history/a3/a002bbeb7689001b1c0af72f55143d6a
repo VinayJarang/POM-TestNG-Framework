@@ -1,0 +1,23 @@
+package com.spicejet.ExtentReportListner;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+import com.spicejet.qa.base.TestBase;
+
+public class HandleMultipleBrowsers extends TestBase{
+	
+	@Test
+	public void setUp(String browserName) {
+		
+		if (browserName.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", "src\\resources\\chromedriver.exe");
+			driver = new ChromeDriver();
+			
+		} else if (browserName.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver", "src\\\\resources\\\\geckodriver.exe");
+			driver = new FirefoxDriver();
+		}
+	}
+}

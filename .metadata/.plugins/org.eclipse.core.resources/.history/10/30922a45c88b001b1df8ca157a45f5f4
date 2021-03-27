@@ -1,0 +1,14 @@
+package LinkedIn;
+
+import org.openqa.selenium.WebDriver;
+
+import DriverInitialise.InitChrome;
+
+public class LinkedIn {
+
+	public static void main(String[] args) {
+		WebDriver aDriver = new InitChrome().init();
+		aDriver.get("https://www.linkedin.com/");
+	}
+
+}

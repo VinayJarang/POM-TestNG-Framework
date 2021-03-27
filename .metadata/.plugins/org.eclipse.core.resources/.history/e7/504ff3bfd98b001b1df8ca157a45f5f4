@@ -1,0 +1,41 @@
+package LinkedIn;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import DriverInitialise.InitChrome;
+
+public class LinkedIn {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver aDriver = new InitChrome().init();
+		aDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		aDriver.get("https://www.linkedin.com/");
+		aDriver.findElement(By.xpath("//*[@id='session_key']")).sendKeys("7026599156");
+		aDriver.findElement(By.xpath("//*[@id='session_password']")).sendKeys("Linkedin@123");
+		aDriver.findElement(By.xpath("//button[@class='sign-in-form__submit-button']")).click();
+		aDriver.findElement(By.xpath("//input[@class='search-global-typeahead__input always-show-placeholder']")).sendKeys("Automation,oracle");
+		aDriver.findElement(By.xpath("//input[@class='search-global-typeahead__input always-show-placeholder']")).sendKeys(Keys.ENTER);
+		
+		List<WebElement> connectBtns = aDriver.findElements(By.xpath("//span[text()='Connect']"));
+		
+		for(WebElement connect: connectBtns) {
+			connect.click();
+			
+			Thread.sleep(10000);
+			//aDriver.switchTo().alert();
+			//System.out.println("WIndows :"+aDriver.getWindowHandles());
+			
+			aDriver.findElement(By.xpath("//button[@class='mr1 artdeco-button artdeco-button--muted artdeco-button--3 artdeco-button--secondary ember-view']")).click();
+			aDriver.findElement(By.xpath("//textarea[@class='ember-text-area ember-view connect-button-send-invite__custom-message mb3']")).sendKeys("Hi, Hope you are doing fine");
+			
+			
+		}
+	}
+
+}

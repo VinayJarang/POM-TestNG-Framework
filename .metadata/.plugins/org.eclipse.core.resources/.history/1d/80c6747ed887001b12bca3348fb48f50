@@ -1,0 +1,37 @@
+package com.spicejet.qa.testcases;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.spicejet.qa.base.TestBase;
+import com.spicejet.qa.pages.LoginPage;
+import com.spicejet.qa.pages.SMProfilePage;
+
+public class SMProfilePageTest extends TestBase{
+	
+	LoginPage loginPage;
+	SMProfilePage SMProfilePage;
+	
+	public SMProfilePageTest() {
+		super();
+	}
+	
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage = new LoginPage();
+		SMProfilePage = loginPage.login(prop.getProperty("mobilenumber"), prop.getProperty("pwd"));
+	}
+	
+	@Test
+	public void verifyTitleTest() {
+		return SMProfilePage.verifySMProfilePageTitle();
+	}
+	
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+	
+}

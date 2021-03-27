@@ -1,0 +1,19 @@
+package Assignments;
+
+import java.io.File;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import DriverInitialise.InitChrome;
+
+public class ChromeExtensions {
+	public static void main() {
+		WebDriver aDriver = new InitChrome().init();
+		aDriver.get(null);
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addExtensions(new File("C:\\Users\\Vinay\\Documents\\Selenium\\2.1.2_0.crx"));
+	}
+	
+}

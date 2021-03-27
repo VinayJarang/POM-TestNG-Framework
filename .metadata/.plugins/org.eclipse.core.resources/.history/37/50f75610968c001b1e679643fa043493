@@ -1,0 +1,20 @@
+package WebDriverMethods;
+
+import org.openqa.selenium.WebDriver;
+
+import DriverInitialise.InitChrome;
+public class NavigateCommands {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		WebDriver aDriver = new InitChrome().init();
+		aDriver.get("http://www.google.com");
+		Thread.sleep(2000);
+		aDriver.navigate().to("http://facebook.com");
+		aDriver.navigate().back();
+		aDriver.navigate().forward();
+		aDriver.navigate().refresh();
+		aDriver.quit();
+	}
+
+}

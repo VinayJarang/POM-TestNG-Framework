@@ -1,0 +1,8 @@
+com\spicejet\qa\testcases\DealsPageTest.class
+com\spicejet\qa\testcases\LoginPageTest.class
+com\spicejet\qa\testcases\BookingPageTest.class
+com\spicejet\qa\testcases\DynamicTestNG.class
+com\spicejet\qa\testcases\PassTest.class
+com\spicejet\qa\testcases\NewDynamicTestNG.class
+com\spicejet\qa\testcases\TestRunner.class
+com\spicejet\qa\testcases\SMProfilePageTest.class

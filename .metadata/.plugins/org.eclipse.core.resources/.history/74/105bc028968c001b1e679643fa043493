@@ -1,0 +1,25 @@
+package WebDriverMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import DriverInitialise.InitChrome;
+
+public class GetCommands {
+	
+	@Test
+	public void main() {
+		WebDriver aDriver = new InitChrome().init();
+		aDriver.get("http://www.spicejet.com");
+		System.out.println("Current URL : " + aDriver.getCurrentUrl() + "\nTitle : " + aDriver.getTitle()
+				+ "\nPageSource : " + aDriver.getPageSource().substring(0, 100) + " \nText : "
+				+ aDriver.findElement(By.cssSelector("div.picker-first2:nth-child(4) > div:nth-child(1) > label:nth-child(2)"))
+						.getText());
+
+		((JavascriptExecutor) aDriver).executeScript("window.open('https://facebook.com')");
+		System.out.println("1 : " + aDriver.getWindowHandle() + "\n2 : " + aDriver.getWindowHandles());
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.spicejet.qa.testcases;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.spicejet.qa.base.TestBase;
+
+public class LoginPageTest extends TestBase {
+
+	public LoginPageTest() {
+		super();
+	}
+	
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+	}
+	
+}

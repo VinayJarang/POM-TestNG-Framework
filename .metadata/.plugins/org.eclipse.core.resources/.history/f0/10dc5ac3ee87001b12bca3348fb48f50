@@ -1,0 +1,24 @@
+package com.spicejet.qa.testcases;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.spicejet.qa.base.TestBase;
+import com.spicejet.qa.pages.LoginPage;
+import com.spicejet.qa.pages.SMProfilePage;
+
+public class DealsPageTest extends TestBase{
+	LoginPage loginPage;
+	SMProfilePage aSMProfilePage;
+	
+	public DealsPageTest() {
+		super();
+	}
+	
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage.login(prop.getProperty("mobileNumber"), prop.getProperty("password"));
+		aSMProfilePage.clickOnDeals();
+	}
+
+}

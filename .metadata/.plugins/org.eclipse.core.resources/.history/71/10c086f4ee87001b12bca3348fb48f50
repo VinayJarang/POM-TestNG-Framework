@@ -1,0 +1,33 @@
+package com.spicejet.qa.testcases;
+
+import java.util.concurrent.TimeUnit;
+
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+
+import com.spicejet.qa.base.TestBase;
+import com.spicejet.qa.pages.LoginPage;
+import com.spicejet.qa.pages.SMProfilePage;
+
+public class DealsPageTest extends TestBase{
+	LoginPage loginPage;
+	SMProfilePage aSMProfilePage;
+	
+	public DealsPageTest() {
+		super();
+	}
+	
+	@BeforeTest
+	public void waitDeclaration() {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage.login(prop.getProperty("mobileNumber"), prop.getProperty("password"));
+		aSMProfilePage.clickOnDeals();
+		
+	}
+
+}

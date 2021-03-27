@@ -1,0 +1,23 @@
+package com.spicejet.qa.testcases;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.spicejet.qa.base.TestBase;
+import com.spicejet.qa.pages.LoginPage;
+
+public class SMProfilePageTest extends TestBase{
+	
+	LoginPage loginPage;
+	
+	public SMProfilePageTest() {
+		super();
+	}
+	
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage = new LoginPage();
+		loginPage.login(prop.getProperty("mobilenumber"), prop.getProperty("pwd"));
+	}
+	
+}

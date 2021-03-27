@@ -1,0 +1,16 @@
+package LinkedIn;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import DriverInitialise.InitChrome;
+
+public class LinkedIn {
+
+	public static void main(String[] args) {
+		WebDriver aDriver = new InitChrome().init();
+		aDriver.get("https://www.linkedin.com/");
+		aDriver.findElement(By.xpath("//*[@id=\'session_key\']")).sendKeys(args);
+	}
+
+}

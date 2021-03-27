@@ -1,0 +1,24 @@
+package LinkedIn;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+
+import DriverInitialise.InitChrome;
+
+public class LinkedIn {
+
+	public static void main(String[] args) {
+		WebDriver aDriver = new InitChrome().init();
+		aDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		aDriver.get("https://www.linkedin.com/");
+		aDriver.findElement(By.xpath("//*[@id='session_key']")).sendKeys("7026599156");
+		aDriver.findElement(By.xpath("//*[@id='session_password']")).sendKeys("Linkedin@123");
+		aDriver.findElement(By.xpath("//button[@class='sign-in-form__submit-button']")).click();
+		aDriver.findElement(By.xpath("//input[@class='search-global-typeahead__input always-show-placeholder']")).sendKeys("Automation,oracle");
+		aDriver.findElement(By.xpath("//input[@class='search-global-typeahead__input always-show-placeholder']")).sendKeys(Keys.ENTER);
+	}
+
+}

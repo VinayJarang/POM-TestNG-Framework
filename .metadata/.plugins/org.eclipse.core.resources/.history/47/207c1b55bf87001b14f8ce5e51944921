@@ -1,0 +1,5 @@
+package com.spicejet.qa.testcases;
+
+public class LoginPageTest {
+
+}

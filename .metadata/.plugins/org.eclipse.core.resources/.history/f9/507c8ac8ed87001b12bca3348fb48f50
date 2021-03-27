@@ -1,0 +1,57 @@
+package com.spicejet.qa.pages;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeMethod;
+
+import com.spicejet.qa.base.TestBase;
+
+public class DealsPage extends TestBase {
+
+	@FindBy(id = "proceed-button")
+	WebElement proceedBtm;
+
+	@FindBy(xpath="//span[contains(text(),'Mobikwi')]//following-sibling::div//child::span[@class='deal-promo-label']//following-sibling::span[contains(text(),'Copy')]")
+	WebElement copyAndBook;
+	
+	public DealsPage() {
+		PageFactory.initElements(driver, this);
+	}
+
+	@BeforeMethod
+	public void clickOnProceed() {
+		ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs2.get(1));
+
+		driver.findElement(By.id("proceed-button")).click();
+		driver.navigate().refresh();
+	}
+
+	public BookingPage bookMobikwikOffer() {
+		copyAndBook.click();
+		return new BookingPage();
+	}
+	
+	public ArrayList<String> getListOfMobiKwikOffer(){
+		driver.findElement(By.linkText("Hotels")).click();
+		driver.findElement(By.linkText("Packages")).click();
+		driver.findElement(By.linkText("Flight")).click();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		//1.//span[contains(text(),'Mobikwi') or contains(text(),'MOBIKWIK')]//following-sibling::div//child::span[@class='deal-promo-label']//descendant::span
+		//2.//span[@class='deal-promo-copy']//preceding-sibling::span//child::span//parent::span//parent::div//preceding-sibling::span[contains(text(),'Mobik') or contains(text(),'MOBIK')]//following-sibling::div//child::span//child::span
+		List<WebElement> mobikwik = driver.findElements(By.xpath(
+				"//span[contains(text(),'Mobikwi') or contains(text(),'MOBIKWIK')]//following-sibling::div//child::span[@class='deal-promo-label']//descendant::span"));
+
+		for(WebElement mobiElement : mobikwik){
+			System.out.println("1 : "+mobiElement.getText());
+		}
+	}
+}

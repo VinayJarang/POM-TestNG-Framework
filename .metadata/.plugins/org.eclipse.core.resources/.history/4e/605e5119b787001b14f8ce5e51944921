@@ -1,0 +1,5 @@
+package com.spicejet.qa.base;
+
+public class BaseTest {
+
+}

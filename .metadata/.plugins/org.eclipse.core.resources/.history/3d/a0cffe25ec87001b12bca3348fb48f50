@@ -1,0 +1,19 @@
+package com.spicejet.qa.pages;
+
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+
+import com.spicejet.qa.base.TestBase;
+
+public class DealsPage extends TestBase{
+	
+
+	/*
+	 * ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+	 * //driver.switchTo().window(tabs2.get(1));
+	 * 
+	 * driver.findElement(By.id("proceed-button")).click();
+	 * driver.navigate().refresh();
+	 */
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Spicejet Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.spicejet.ExtentReportListner.ExtentReporterNG"/>
+  </listeners>
+  <test thread-count="2" parallel="tests" name="Spicejet login deals and book Firefox(failed)">
+    <parameter name="browserName" value="firefox"/>
+    <classes>
+      <class name="com.spicejet.qa.testcases.DealsPageTest">
+        <methods>
+          <include name="getListOfMobiKwikOfferTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="bookMobikwikOfferTest"/>
+          <include name="quitDrivers"/>
+        </methods>
+      </class> <!-- com.spicejet.qa.testcases.DealsPageTest -->
+      <class name="com.spicejet.qa.testcases.SMProfilePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="quitDrivers"/>
+          <include name="verifyUserNameTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.spicejet.qa.testcases.SMProfilePageTest -->
+      <class name="com.spicejet.qa.testcases.BookingPageTest">
+        <methods>
+          <include name="quitDrivers"/>
+          <include name="validateFillPassengerDetails"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.spicejet.qa.testcases.BookingPageTest -->
+    </classes>
+  </test> <!-- Spicejet login deals and book Firefox(failed) -->
+  <test thread-count="2" parallel="tests" name="Spicejet login deals and book Chrome(failed)">
+    <parameter name="browserName" value="chrome"/>
+    <classes>
+      <class name="com.spicejet.qa.testcases.LoginPageTest">
+        <methods>
+          <include name="quitDrivers"/>
+          <include name="setUp"/>
+          <include name="loginPageTitleTest"/>
+          <include name="loginTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.spicejet.qa.testcases.LoginPageTest -->
+      <class name="com.spicejet.qa.testcases.DealsPageTest">
+        <methods>
+          <include name="getListOfMobiKwikOfferTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="bookMobikwikOfferTest"/>
+          <include name="quitDrivers"/>
+        </methods>
+      </class> <!-- com.spicejet.qa.testcases.DealsPageTest -->
+      <class name="com.spicejet.qa.testcases.SMProfilePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="quitDrivers"/>
+          <include name="verifyUserNameTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.spicejet.qa.testcases.SMProfilePageTest -->
+      <class name="com.spicejet.qa.testcases.BookingPageTest">
+        <methods>
+          <include name="quitDrivers"/>
+          <include name="validateFillPassengerDetails"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.spicejet.qa.testcases.BookingPageTest -->
+    </classes>
+  </test> <!-- Spicejet login deals and book Chrome(failed) -->
+</suite> <!-- Failed suite [Spicejet Suite] -->

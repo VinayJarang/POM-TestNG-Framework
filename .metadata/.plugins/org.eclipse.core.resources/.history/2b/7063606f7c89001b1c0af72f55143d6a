@@ -1,0 +1,12 @@
+package com.spicejet.qa.testcases;
+
+import org.testng.TestNG;
+
+public class TestRunner {
+	
+	static TestNG testNg;
+	public static void main(String[] args) {
+		
+	}
+
+}

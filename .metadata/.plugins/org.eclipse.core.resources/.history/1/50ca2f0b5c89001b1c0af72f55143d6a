@@ -1,0 +1,66 @@
+package com.spicejet.qa.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import com.spicejet.qa.base.TestBase;
+
+public class BookingPage extends TestBase{
+	
+	@FindBy(xpath = "//label[text()='One Way' and @class='select-label']")
+	WebElement oneWayLabel;
+	
+	@FindBy(xpath = "//*[@id='ctl00_mainContent_ddl_originStation1_CTXT']")
+	WebElement departureCity;
+	
+	@FindBy(xpath = "//a[text()=' Bengaluru (BLR)']")
+	WebElement bengaluru;
+	
+	@FindBy(xpath = "//a[text()=' Delhi (DEL)']")
+	WebElement delhi;
+	
+	@FindBy(linkText = "31")
+	WebElement date;
+	
+	@FindBy(linkText = "//div[@class='paxinfo']")
+	WebElement passengerSelect;
+	
+	@FindBy(xpath = "//select[@id='ControlGroupSearchView_AvailabilitySearchInputSearchView_DropDownListPassengerType_ADT']")
+	WebElement adultDropDown;
+	
+	
+	public BookingPage() {
+		PageFactory.initElements(driver, this);
+	}
+	
+	public boolean verifyOneWayLabel() {
+		return oneWayLabel.isDisplayed();
+	}
+	
+	public void createBooking() throws Exception {
+		fillBookingDetails();
+		Thread.sleep(9000);
+		
+		driver.findElement(By.xpath("//*[@id=\"ControlGroupSearchView_AvailabilitySearchInputSearchVieworiginStation1_CTXT\"]")).click();
+		driver.findElement(By.xpath("//a[text()=' Bengaluru (BLR)']")).click();
+		driver.findElement(By.xpath("//a[text()=' Delhi (DEL)']")).click();
+	}
+	public void fillBookingDetails() throws InterruptedException {
+		departureCity.click();
+		bengaluru.click();
+		delhi.click();
+		date.click();
+		Thread.sleep(10000);
+		/*
+		 * Select select = new Select(driver.findElement(By.xpath(
+		 * "//select[@id='ControlGroupSearchView_AvailabilitySearchInputSearchView_DropDownListPassengerType_ADT']"
+		 * ))); select.selectByVisibleText("4");
+		 */
+		
+		driver.findElement(By.xpath("//*[@id=\"ctl00_mainContent_btn_FindFlights\"]")).click();
+	}
+}
