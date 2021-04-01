@@ -26,7 +26,7 @@ public class TestBase {
 		
 		try {
 			prop = new Properties();
-			String path = "\bPageObjectModel/src/main/java/com/spicejet/qa/config/config.properties";
+			String path = "\rPageObjectModel/src/main/java/com/spicejet/qa/config/config.properties";
 			path.trim();
 			FileInputStream ip = new FileInputStream(path);
 			prop.load(ip);
