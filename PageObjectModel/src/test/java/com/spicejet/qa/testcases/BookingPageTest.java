@@ -56,16 +56,15 @@ public class BookingPageTest extends TestBase{
 	 * aBookingPage.createBooking(); }
 	 */
 	
-	@DataProvider
-	public Object[][] getTestData() {
-		Object data[][] = TestUtil.getTestData(sheetName);
-		return data;
-	}
-	
-	@Test(priority=1, dataProvider="getTestData")
-	public void validateFillPassengerDetails(String title, String firstName, String lastName, String mobileNumber) throws InterruptedException {
-		aBookingPage.fillPassengerDetails(title,firstName,lastName,mobileNumber);
-	}
+	/*
+	 * @DataProvider public Object[][] getTestData() { Object data[][] =
+	 * TestUtil.getTestData(sheetName); return data; }
+	 * 
+	 * @Test(priority=1, dataProvider="getTestData") public void
+	 * validateFillPassengerDetails(String title, String firstName, String lastName,
+	 * String mobileNumber) throws InterruptedException {
+	 * aBookingPage.fillPassengerDetails(title,firstName,lastName,mobileNumber); }
+	 */
 
 	@AfterMethod
 	public void tearDown() {
