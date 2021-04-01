@@ -26,7 +26,7 @@ public class TestBase {
 		
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream("C:\\PageObjectModel-Workspace\\PageObjectModel\\src\\main\\java\\com\\spicejet\\qa\\config\\config.properties");
+			FileInputStream ip = new FileInputStream("src\\main\\java\\com\\spicejet\\qa\\config\\config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -47,10 +47,11 @@ public class TestBase {
 			System.setProperty("webdriver.gecko.driver", "C:\\PageObjectModel-Workspace\\PageObjectModel\\src\\resources\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
-		event_driver = new EventFiringWebDriver(driver);
-		eventListner = new WebEventListener();
-		event_driver.register(eventListner);
-		driver = event_driver;
+		/*
+		 * event_driver = new EventFiringWebDriver(driver); eventListner = new
+		 * WebEventListener(); event_driver.register(eventListner); driver =
+		 * event_driver;
+		 */
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
