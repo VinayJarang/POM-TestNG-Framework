@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.NoInjection;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.spicejet.qa.base.TestBase;
@@ -30,7 +30,7 @@ public class BookingPageTest extends TestBase{
 	
 	@BeforeMethod
 	//@Parameters("browserName")
-	public void setUp(/* @NoInjection String browserName */) throws InterruptedException {
+	public void setUp(/* String browserName */) throws InterruptedException {
 		initialization(/* browserName */);
 		/*
 		 * driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
@@ -56,7 +56,7 @@ public class BookingPageTest extends TestBase{
 	 * aBookingPage.createBooking(); }
 	 */
 	
-	@DataProvider
+	/*@DataProvider
 	public Object[][] getTestData() {
 		Object data[][] = TestUtil.getTestData(sheetName);
 		return data;
@@ -65,7 +65,7 @@ public class BookingPageTest extends TestBase{
 	@Test(priority=1, dataProvider="getTestData")
 	public void validateFillPassengerDetails(String title, String firstName, String lastName, String mobileNumber) throws InterruptedException {
 		aBookingPage.fillPassengerDetails(title,firstName,lastName,mobileNumber);
-	}
+	}*/
 
 	@AfterMethod
 	public void tearDown() {
