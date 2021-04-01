@@ -26,7 +26,9 @@ public class TestBase {
 		
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream("/PageObjectModel/src/main/java/com/spicejet/qa/config/config.properties");
+			String path = "PageObjectModel/src/main/java/com/spicejet/qa/config/config.properties";
+			path.trim();
+			FileInputStream ip = new FileInputStream(path);
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
