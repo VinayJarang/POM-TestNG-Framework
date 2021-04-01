@@ -24,21 +24,18 @@ public class TestBase {
 	
 	public TestBase() {
 		
-		try {
-			prop = new Properties();
-			String path = "PageObjectModel/src/main/java/com/spicejet/qa/config/config.properties";
-			path.trim();
-			FileInputStream ip = new FileInputStream(path);
-			prop.load(ip);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		/*
+		 * try { prop = new Properties(); String path =
+		 * "PageObjectModel/src/main/java/com/spicejet/qa/config/config.properties";
+		 * path.trim(); FileInputStream ip = new FileInputStream(path); prop.load(ip); }
+		 * catch (FileNotFoundException e) { e.printStackTrace(); } catch (IOException
+		 * e) { e.printStackTrace(); }
+		 */
 	}
 	
 	public static void initialization(/* String browserName */) {
-		String browserName = prop.getProperty("browser");
+		//String browserName = prop.getProperty("browser");
+		String browserName = "chrome";
 		if(browserName.equals("chrome")) {
 			System.out.println("In CHROME 1");
 			System.setProperty("webdriver.chrome.driver", "C:/PageObjectModel-Workspace/PageObjectModel/src/resources/chromedriver.exe");
