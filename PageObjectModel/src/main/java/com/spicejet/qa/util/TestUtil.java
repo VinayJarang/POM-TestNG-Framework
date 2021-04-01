@@ -34,7 +34,7 @@ public class TestUtil extends TestBase {
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
 	
-	//public static String TESTDATA_SHEET_PATH = "C:\\PageObjectModel-Workspace\\PageObjectModel\\src\\main\\java\\com\\spicejet\\qa\\testdata\\Book.xlsx";
+	public static String TESTDATA_SHEET_PATH = "C:\\PageObjectModel-Workspace\\PageObjectModel\\src\\main\\java\\com\\spicejet\\qa\\testdata\\Book.xlsx";
 	
 	static Workbook book;
 	static Sheet sheet;
@@ -52,7 +52,7 @@ public class TestUtil extends TestBase {
 		 */
 	}
 	
-	/*public static Object[][] getTestData(String sheetName) {
+	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
 		try {
 			file = new FileInputStream(TESTDATA_SHEET_PATH);
@@ -75,5 +75,5 @@ public class TestUtil extends TestBase {
 			}
 		}
 		return data;
-	}*/
+	}
 }
