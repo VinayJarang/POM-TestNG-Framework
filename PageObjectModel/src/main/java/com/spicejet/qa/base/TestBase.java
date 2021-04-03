@@ -37,7 +37,7 @@ public class TestBase {
 		String browserName = "chrome";
 		if(browserName.equals("chrome")) {
 			System.out.println("In CHROME 1");
-			System.setProperty("webdriver.chrome.driver", "C:\\PageObjectModel-Workspace\\PageObjectModel\\src\\resources\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "/src/resources/chromedriver.exe");
 			driver = new ChromeDriver();
 			
 		} else if(browserName.equals("firefox")) {

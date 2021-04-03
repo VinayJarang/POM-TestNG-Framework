@@ -1,9 +1,0 @@
-package com.spicejet.qa.pages;
-
-import com.spicejet.qa.base.TestBase;
-
-public class LoginPage extends TestBase {
-	
-	
-	
-}
