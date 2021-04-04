@@ -37,12 +37,12 @@ public class TestBase {
 		String browserName = "chrome";
 		if(browserName.equals("chrome")) {
 			System.out.println("In CHROME 1");
-			System.setProperty("webdriver.chrome.driver","PageObjectModel/src/main/java/com/spicejet/qa/base/");
+			System.setProperty("webdriver.chrome.driver","src/main/java/com/spicejet/qa/base/");
 			driver = new ChromeDriver();
 			
 		} else if(browserName.equals("firefox")) {
 			System.out.println("In FIREFOX 1 ");
-			System.setProperty("webdriver.gecko.driver", "PageObjectModel/ src/ main/ java/ com/ spicejet/ qa/ base/");
+			System.setProperty("webdriver.gecko.driver", "src/main/java/com/spicejet/qa/base/");
 			driver = new FirefoxDriver();
 		}
 		/*
