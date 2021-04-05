@@ -29,7 +29,7 @@ public class TestBase {
 		
 		try {
 			prop = new Properties();
-			String path = project+"\\src\\main\\java\\com\\spicejet\\qa\\config\\config.properties";
+			String path = "PageObjectModel/src/resources/";
 			path.trim();
 			FileInputStream ip = new FileInputStream(path);
 			prop.load(ip);
